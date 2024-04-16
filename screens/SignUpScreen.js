@@ -106,16 +106,16 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     backgroundColor: '#FFFFFF',
-    paddingHorizontal: width * 0.05,
+    paddingHorizontal: width * 0.03,
   },
   header: {
     alignItems: 'center',
-    marginBottom: width * 0.05,
+    marginBottom: width * 0.01,
   },
   headerText: {
     fontWeight: '400',
-    fontSize: width * 0.18, 
-    lineHeight: width * 0.30, 
+    fontSize: width * 0.16, 
+    lineHeight: width * 0.35, 
     textAlign: 'center',
     color: '#00284D'
   },
@@ -123,13 +123,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#00284D',
     fontWeight: '800',
-    marginBottom: width * 0.05,
+    marginBottom: width * 0.02,
   },
   heading2: {
     fontSize: 16,
     color: '#00284D',
     fontWeight: '800',
-    marginBottom: width * 0.02,
+    marginBottom: width * 0.03,
   },
   formContainer: {
     alignItems: 'center',
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     width: '100%',
-    height: 53,
+    height: 50,
     borderRadius: 30,
     backgroundColor: '#00284D',
     alignItems: 'center',

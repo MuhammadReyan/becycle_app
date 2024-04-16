@@ -11,7 +11,7 @@ const ProfileScreen = () => {
             <View style={{position:'relative',top:-380,left:-70}}>
                 <Text style={[styles.heading, { fontSize: width * 0.05 }]}>
                 <Icon name="chevron-left" size={15} color="black" />
-                  {" "}  Información personal
+                  {" "} {" "}  Información personal
                     </Text>
              
             </View>
@@ -44,8 +44,8 @@ const ProfileScreen = () => {
                 <Text style={[styles.bottomButtonText, { fontSize: width * 0.04 }]}>Ver reservas</Text>
             </TouchableOpacity>
 
-            <View style={{ position: 'absolute', bottom: 0 }}>
-                <BottomTabs />
+            <View style={{ position: 'absolute', bottom: -10 }}>
+                <BottomTabs  />
             </View>
         </View>
     );
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: width * 0.15,
+        paddingHorizontal: width * 0.10,
     },
     becycleText: {
         color: '#00284D',
@@ -77,24 +77,27 @@ const styles = StyleSheet.create({
     contentContainer: {
         marginBottom: height * 0.03,
         marginTop: -300, // Move content container up
+        
     },
     row: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
-        marginBottom: height * 0.01,
+        marginBottom: height * 0.02,
         gap: 100
     },
     label: {
         fontWeight: 700,
         color: "#00284D",
-        marginLeft: 90
+        marginLeft: 80,
+        marginTop:20
 
 
 
     },
     value: {
         width: '70%',
+        marginTop:20
 
 
 

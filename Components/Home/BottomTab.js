@@ -76,8 +76,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: width * 0.05,
     paddingBottom: 10,
     // backgroundColor: '#FFFFFF', // Background color added for better visibility
-    marginTop:250,
-    gap:60
+     marginTop:250,
+    gap:70,
+ 
   },
   iconContainer: {
     alignItems: "center",

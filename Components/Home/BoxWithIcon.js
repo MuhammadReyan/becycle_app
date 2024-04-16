@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         borderRadius: width * 0.05,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: width * 0.15,
+        marginTop: width * 0.20,
         marginBottom: width * 0.1,
     },
     textBoxText: {

@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
         fontSize: width * 0.05,
         color: '#FF6800',
         marginBottom: height * 0.02,
+        marginLeft:10
     },
     circleContainer: {
         alignItems: 'center',

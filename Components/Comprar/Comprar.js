@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import BottomTabs from "../Home/BottomTab";
 import { useNavigation } from "@react-navigation/native";
 
@@ -8,7 +8,6 @@ const memberships = [
     { title: "3 meses", subtitle: "ilimitados", price: "$200" },
     { title: "6 meses", subtitle: "ilimitados", price: "$200" },
     { title: "12 meses", subtitle: "ilimitados", price: "$200" },
-
 ];
 
 const packages = [
@@ -19,25 +18,28 @@ const packages = [
 ];
 
 const Comprar = () => {
-
+    const navigation = useNavigation();
+    const handleNavigate = () => {
+        navigation.navigate('SecondSplashScreen');
+    };
 
     const renderItem = ({ item }) => {
         return (
-            <View style={styles.box}>
+            <TouchableOpacity onPress={handleNavigate} style={styles.box}>
                 <Text style={styles.boxTitle}>{item.title}</Text>
                 <Text style={styles.boxSubtitle}>{item.subtitle}</Text>
                 <Text style={styles.boxPrice}>{item.price}</Text>
-            </View>
+            </TouchableOpacity>
         );
     };
 
     return (
         <View style={styles.container}>
             {/* Heading: Membresías */}
-            <Text style={styles.heading}> Membresías</Text>
+            <Text style={styles.heading}>Membresías</Text>
 
             {/* Membership Boxes */}
-            <View style={{height:600}}>
+            <View style={{ height: 600 }}>
                 <FlatList
                     data={memberships}
                     renderItem={renderItem}
@@ -47,25 +49,22 @@ const Comprar = () => {
                 />
 
                 {/* Heading: Paquetes */}
-                <View >
-
-                <Text style={{ color: '#FF6800',fontWeight:'bold'}} >Paquetes</Text>
+                <View style={{marginTop:2,marginBottom:10}}>
+                    <Text style={{ color: '#FF6800', fontWeight: 'bold' }}>Paquetes</Text>
                 </View>
 
                 {/* Package Boxes */}
-             
                 <FlatList
                     data={packages}
                     renderItem={renderItem}
                     keyExtractor={(item, index) => index.toString()}
                     numColumns={2}
                     contentContainerStyle={styles.boxContainer}
-                    />
+                />
+            </View>
 
-                    </View>
-            
-            <View style={{position:"absolute",bottom:-10}}>
-            <BottomTabs />
+            <View style={{ position: "absolute", bottom: -10 }}>
+                <BottomTabs />
             </View>
         </View>
     );
@@ -77,9 +76,7 @@ const styles = StyleSheet.create({
         paddingLeft: -100,
         paddingRight: 10,
         alignItems: "center",
-        justifyContent:"flex-start"
-      
-
+        justifyContent: "flex-start"
     },
     heading: {
         fontSize: 16,
@@ -87,12 +84,10 @@ const styles = StyleSheet.create({
         marginBottom: 6,
         color: '#FF6800',
         marginLeft: -230,
-        marginTop: 30
+        marginTop: 40
     },
     boxContainer: {
         alignItems: "center",
-        
-
     },
     box: {
         width: 160,
@@ -102,7 +97,6 @@ const styles = StyleSheet.create({
         margin: 4,
         justifyContent: "center",
         alignItems: "center",
-
     },
     boxTitle: {
         fontSize: 16,

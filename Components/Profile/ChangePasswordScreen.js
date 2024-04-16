@@ -18,8 +18,8 @@ const ChangePasswordScreen = () => {
         <View style={styles.container}>
             <Text style={[styles.title,{ fontSize: width * 0.08 }]}>be cycle</Text>
             <Text style={styles.subtitle}>
-            <Icon name="chevron-left" size={15} color="black" />
-            {" "}
+            <Icon name="chevron-left" size={15} color="black"  />
+            {" "} {" "}
                 Cambiar contraseña</Text>
             <TextInput
                 style={styles.input}
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
         borderRadius: width * 0.1,
         paddingHorizontal: width * 0.03,
         marginBottom: height * 0.02,
+        marginTop:20
     },
     saveButton: {
         backgroundColor: '#00284D',
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     },
     bottomTabs: {
         position: 'absolute',
-        bottom: 0,
+        bottom: -10,
         width: '100%',
     },
 });
