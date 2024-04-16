@@ -1,45 +1,51 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import BottomTabs from '../Home/BottomTab';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
+const { width, height } = Dimensions.get('window');
 const ProfileScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.becycleText}>be cycle</Text>
-            <View style={styles.headingContainer}>
-                <Text style={styles.heading}>Información personal</Text>
+            <Text style={[styles.becycleText, { fontSize: width * 0.08 }]}>be cycle</Text>
+            <View style={{position:'relative',top:-380,left:-70}}>
+                <Text style={[styles.heading, { fontSize: width * 0.05 }]}>
+                <Icon name="chevron-left" size={15} color="black" />
+                  {" "}  Información personal
+                    </Text>
+             
             </View>
             <View style={styles.contentContainer}>
                 <View style={styles.row}>
-                    <Text style={styles.label}>Nombre:</Text>
-                    <Text style={styles.value}>Daniela Pérez</Text>
+                    <Text style={[styles.label, { fontSize: width * 0.045 }]}>Nombre:</Text>
+                    <Text style={[styles.value, { fontSize: width * 0.045 }]}>Daniela Pérez</Text>
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.label}>Correo:</Text>
-                    <Text style={styles.value}>daniela@hotmail.com</Text>
+                    <Text style={[styles.label, { fontSize: width * 0.045 }]}>Correo:</Text>
+                    <Text style={[styles.value, { fontSize: width * 0.045 }]}>daniela@hotmail.com</Text>
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.label}>Celular:</Text>
-                    <Text style={styles.value}>4421143497</Text>
+                    <Text style={[styles.label, { fontSize: width * 0.045 }]}>Celular:</Text>
+                    <Text style={[styles.value, { fontSize: width * 0.045 }]}>4421143497</Text>
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.label}>Género:</Text>
-                    <Text style={styles.value}>Femenino</Text>
+                    <Text style={[styles.label, { fontSize: width * 0.045 }]}>Género:</Text>
+                    <Text style={[styles.value, { fontSize: width * 0.045 }]}>Femenino</Text>
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.label}>Fecha de nacimiento:</Text>
-                    <Text style={styles.value}>10 / 10 / 1998</Text>
+                    <Text style={[styles.label, { fontSize: width * 0.045 }]}>Fecha de nacimiento:</Text>
+                    <Text style={[styles.value, { fontSize: width * 0.045, marginLeft: -40 }]}>10/10/1998</Text>
                 </View>
             </View>
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>¿Quieres cambiar algún dato? Por favor contacta a soporte</Text>
+                <Text style={[styles.buttonText, { fontSize: width * 0.035 }]}>¿Quieres cambiar algún dato? Por favor contacta a soporte</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.bottomButton}>
-                <Text style={styles.bottomButtonText}>Ver reservas</Text>
+                <Text style={[styles.bottomButtonText, { fontSize: width * 0.04 }]}>Ver reservas</Text>
             </TouchableOpacity>
 
-            <View>
-                <BottomTabs/>
+            <View style={{ position: 'absolute', bottom: 0 }}>
+                <BottomTabs />
             </View>
         </View>
     );
@@ -51,82 +57,69 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: 20,
+        paddingHorizontal: width * 0.15,
     },
     becycleText: {
-        width: 146,
-        height: 44,
-        top: -10,
-        left: -125,
-        fontSize: 36,
-        fontWeight: '600',
-        lineHeight: 43.57,
-        color:'#00284D',
-        bottom:10
+        color: '#00284D',
+        marginBottom: height * 0.55,
+        marginLeft: -220
     },
     headingContainer: {
-        marginBottom: 198,
+        marginTop: height * 0.03, // Move heading to the top
+        marginBottom: height * 0.02, // Add margin bottom for spacing
+        marginLeft: -150,
+
     },
     heading: {
-        fontSize: 18,
         fontWeight: '700',
-        width: 198,
-        height: 22,
-        top: 0,
-        left: -76,
+        marginBottom: height * 0.02,
     },
     contentContainer: {
-        marginBottom: 20,
+        marginBottom: height * 0.03,
+        marginTop: -300, // Move content container up
     },
     row: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
-        marginBottom: 10,
+        marginBottom: height * 0.01,
+        gap: 100
     },
     label: {
-        width: 77,
-        height: 22,
-        fontSize: 18,
-        left: -36,
-        fontWeight: '700',
-        top: -150,
+        fontWeight: 700,
         color: "#00284D",
+        marginLeft: 90
+
+
+
     },
     value: {
         width: '70%',
-        fontSize: 18,
-        top: -150,
+
+
+
     },
     button: {
-        borderRadius: 30,
-        paddingHorizontal: 20,
-        paddingVertical: 10,
-        marginBottom: 20,
-        top: -90,
-        left: -25,
+        borderRadius: width * 0.1,
+        paddingHorizontal: width * 0.03,
+        paddingVertical: height * 0.015,
+        marginBottom: height * 0.03,
     },
     buttonText: {
         color: '#00284D',
-        fontSize: 16,
-        width: 232,
-        height: 42,
-        top: 10,
         textAlign: 'center',
     },
     bottomButton: {
         backgroundColor: '#00284D',
-        borderRadius: 30,
-        paddingHorizontal: 20,
-        paddingVertical: 15,
-        width: 347,
-        height: 53,
-        top: -10,
-        left: -20,
+        borderRadius: width * 0.1,
+        paddingHorizontal: width * 0.03,
+        paddingVertical: height * 0.020,
+        marginBottom: height * 0.02,
+        marginTop: 10,
+        width: '120%'
     },
     bottomButtonText: {
         color: '#FFFFFF',
-        fontSize: 16,
         textAlign: 'center',
     },
 });

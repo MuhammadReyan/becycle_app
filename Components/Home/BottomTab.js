@@ -1,7 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+
+const { width } = Dimensions.get('window');
 
 export default function BottomTabs() {
   const navigation = useNavigation();
@@ -19,54 +21,71 @@ export default function BottomTabs() {
   };
 
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        paddingHorizontal: 25,
-        marginTop: 7,
-        gap: 80,
-        marginLeft: -40,
-      }}
-    >
-      <Icon
-        icon="home"
-        text="Home"
-        active={activeTab === "home"}
-        onPress={() => handleTabPress("home")}
-      />
-      <Icon
-        icon="shopping-cart"
-        text="Compror"
-        active={activeTab === "shopping-cart"}
-        onPress={() => handleTabPress("shopping-cart")}
-      />
-      <Icon
-        icon="calendar"
-        text="Reverser"
-        active={activeTab === "calendar"}
-        onPress={() => handleTabPress("calendar")}
-      />
-    </View>
+    <ScrollView contentContainerStyle={styles.scrollViewContent}>
+      <View style={styles.container}>
+        <Icon
+          icon="home"
+          text="Home"
+          active={activeTab === "home"}
+          onPress={() => handleTabPress("home")}
+        />
+        <Icon
+          icon="shopping-cart"
+          text="Comprar"
+          active={activeTab === "shopping-cart"}
+          onPress={() => handleTabPress("shopping-cart")}
+        />
+        <Icon
+          icon="calendar"
+          text="Reverser"
+          active={activeTab === "calendar"}
+          onPress={() => handleTabPress("calendar")}
+        />
+      </View>
+    </ScrollView>
   );
 }
 
 const Icon = ({ icon, text, active, onPress }) => (
   <TouchableOpacity onPress={onPress}>
-    <View style={{ alignItems: "center" }}>
+    <View style={styles.iconContainer}>
       <FontAwesome5
         name={icon}
-        size={25}
-        style={{
-          marginBottom: 3,
-          alignSelf: "center",
-          color: active ? "#00284D" : "#B8B8B8",
-        }}
+        size={width * 0.06}
+        style={[
+          styles.icon,
+          { color: active ? "#00284D" : "#B8B8B8" },
+        ]}
       />
-      <Text style={{ color: active ? "#00284D" : "#555", fontSize: 12 }}>
+      <Text style={[styles.text, { color: active ? "#00284D" : "#555" }]}>
         {text}
       </Text>
     </View>
   </TouchableOpacity>
 );
+
+const styles = StyleSheet.create({
+  scrollViewContent: {
+    flexGrow: 1,
+    justifyContent: "flex-end",
+  },
+  container: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingHorizontal: width * 0.05,
+    paddingBottom: 10,
+    // backgroundColor: '#FFFFFF', // Background color added for better visibility
+    marginTop:250,
+    gap:60
+  },
+  iconContainer: {
+    alignItems: "center",
+  },
+  icon: {
+    marginBottom: 3,
+  },
+  text: {
+    fontSize: width * 0.035,
+  },
+});

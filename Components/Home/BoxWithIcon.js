@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'; // or 'react-native-vector-icons' if not using Expo
+
+const { width } = Dimensions.get('window');
 
 const BoxWithIcon = ({ number }) => {
     const [displayText, setDisplayText] = useState("Initial Text");
@@ -17,21 +19,16 @@ const BoxWithIcon = ({ number }) => {
         } else {
             setButton1Color('#00284D');
             setButton2Color('#FFFFFF');
-           
-          
-         
         }
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.boxContainer}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <FontAwesome name="bicycle" size={24} color="black" style={styles.icon} />
-                    <View>
-                        <Text style={styles.number}>{number ? number : '15'}</Text>
-                        <Text style={styles.text}>Your Text</Text>
-                    </View>
+                <FontAwesome name="bicycle" size={width * 0.15} color="#F0F2F4" style={styles.icon} />
+                <View>
+                    <Text style={styles.number}>{number ? number : '15'}</Text>
+                    <Text style={styles.text}>Your Text</Text>
                 </View>
             </View>
 
@@ -64,91 +61,75 @@ const BoxWithIcon = ({ number }) => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        marginTop: 90,
+        marginTop: width * 0.1,
     },
     boxContainer: {
-        width: 334,
-        height: 95,
+        width: width * 0.9,
+        height: width * 0.25,
         backgroundColor: '#00284D',
         borderRadius: 30,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingLeft: 15,
-        paddingRight: 15,
-        marginBottom: 10,
+        paddingHorizontal: 15,
         justifyContent: 'space-between',
-        marginLeft: -19
     },
     icon: {
-        marginRight: 150,
-        color: '#F0F2F4',
-        fontSize: 44,
-        marginTop: 7,
-        marginLeft: 10
+        marginRight: width * 0.08,
     },
     number: {
-        fontSize: 44,
+        fontSize: width * 0.08,
         fontWeight: 'bold',
-        marginLeft: 15,
         color: '#F0F2F4',
     },
     text: {
-        fontSize: 16,
+        fontSize: width * 0.035,
         color: '#F0F2F4',
-        marginTop: 1,
-        marginBottom: 5,
-        paddingLeft: 10,
-        paddingRight: 10
     },
     sessionBox: {
-        width: 159,
-        height: 35,
+        width: width * 0.5,
+        height: width * 0.1,
         position: 'absolute',
-        top: 120,
-        left: -200,
+        top: width * 0.2,
+        left: -width * 0.5,
         backgroundColor: '#FFFFFF',
         borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',
     },
     sessionText: {
-        // fontFamily: 'Inter',
         fontWeight: '500',
-        fontSize: 24,
-        lineHeight: 29.05,
+        fontSize: width * 0.05,
         color: '#00284D',
     },
     buttonRow: {
         flexDirection: 'row',
-        marginTop: 100,
+        marginTop: width * 0.15,
     },
     button: {
-        width: 168,
-        height: 42,
-        borderRadius: 30,
+        width: width * 0.4,
+        height: width * 0.1,
+        borderRadius: width * 0.05,
         justifyContent: 'center',
         alignItems: 'center',
-        marginHorizontal: 10,
-        marginLeft:-10
+        marginHorizontal: width * 0.02,
     },
     buttonText: {
-        fontSize: 16,
+        fontSize: width * 0.04,
         fontWeight: 'bold',
-        
     },
     textBox: {
-        width: 336,
-        height: 42,
+        width: width * 0.9,
+        height: width * 0.1,
         backgroundColor: '#FFFFFF',
-        borderRadius: 30,
+        borderRadius: width * 0.05,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 130,
-        marginBottom:90
+        marginTop: width * 0.15,
+        marginBottom: width * 0.1,
     },
     textBoxText: {
+        fontSize: width * 0.04,
         color: '#00284D',
-        fontSize: 16,
     },
 });
 

@@ -8,6 +8,7 @@ const memberships = [
     { title: "3 meses", subtitle: "ilimitados", price: "$200" },
     { title: "6 meses", subtitle: "ilimitados", price: "$200" },
     { title: "12 meses", subtitle: "ilimitados", price: "$200" },
+
 ];
 
 const packages = [
@@ -19,7 +20,7 @@ const packages = [
 
 const Comprar = () => {
 
-   
+
     const renderItem = ({ item }) => {
         return (
             <View style={styles.box}>
@@ -36,28 +37,35 @@ const Comprar = () => {
             <Text style={styles.heading}> Membresías</Text>
 
             {/* Membership Boxes */}
-            <FlatList
-                data={memberships}
-                renderItem={renderItem}
-                keyExtractor={(item, index) => index.toString()}
-                numColumns={2}
-                contentContainerStyle={styles.boxContainer}
-            />
+            <View style={{height:600}}>
+                <FlatList
+                    data={memberships}
+                    renderItem={renderItem}
+                    keyExtractor={(item, index) => index.toString()}
+                    numColumns={2}
+                    contentContainerStyle={styles.boxContainer}
+                />
 
-            {/* Heading: Paquetes */}
-            <Text style={styles.heading}>Paquetes</Text>
+                {/* Heading: Paquetes */}
+                <View >
 
-            {/* Package Boxes */}
-            <FlatList
-                data={packages}
-                renderItem={renderItem}
-                keyExtractor={(item, index) => index.toString()}
-                numColumns={2}
-                contentContainerStyle={styles.boxContainer}
-            />
+                <Text style={{ color: '#FF6800',fontWeight:'bold'}} >Paquetes</Text>
+                </View>
 
-            <View style={{ flex: 1, justifyContent: 'center',alignItems:"center",marginBottom:30 }}>
-                <BottomTabs />
+                {/* Package Boxes */}
+             
+                <FlatList
+                    data={packages}
+                    renderItem={renderItem}
+                    keyExtractor={(item, index) => index.toString()}
+                    numColumns={2}
+                    contentContainerStyle={styles.boxContainer}
+                    />
+
+                    </View>
+            
+            <View style={{position:"absolute",bottom:-10}}>
+            <BottomTabs />
             </View>
         </View>
     );
@@ -67,28 +75,34 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingLeft: -100,
-        paddingRight:10,
-        alignItems: "center", // Center horizontally
+        paddingRight: 10,
+        alignItems: "center",
+        justifyContent:"flex-start"
+      
+
     },
     heading: {
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: "bold",
-        marginBottom: 10,
+        marginBottom: 6,
         color: '#FF6800',
-        marginLeft: -230
+        marginLeft: -230,
+        marginTop: 30
     },
     boxContainer: {
         alignItems: "center",
+        
+
     },
     box: {
         width: 160,
         height: 130,
         backgroundColor: "#00284D",
         borderRadius: 30,
-        margin: 5,
+        margin: 4,
         justifyContent: "center",
         alignItems: "center",
-        
+
     },
     boxTitle: {
         fontSize: 16,

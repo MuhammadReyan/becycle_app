@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import BottomTabs from '../Home/BottomTab';
+import Icon from 'react-native-vector-icons/FontAwesome';
+const { width, height } = Dimensions.get('window');
 
 const ChangePasswordScreen = () => {
     const [currentPassword, setCurrentPassword] = useState('');
@@ -9,12 +11,16 @@ const ChangePasswordScreen = () => {
 
     const handleSaveChanges = () => {
         // Handle saving changes logic here
+        console.log('hello')
     };
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>be cycle</Text>
-            <Text style={styles.subtitle}>Cambiar contraseña</Text>
+            <Text style={[styles.title,{ fontSize: width * 0.08 }]}>be cycle</Text>
+            <Text style={styles.subtitle}>
+            <Icon name="chevron-left" size={15} color="black" />
+            {" "}
+                Cambiar contraseña</Text>
             <TextInput
                 style={styles.input}
                 value={currentPassword}
@@ -39,9 +45,9 @@ const ChangePasswordScreen = () => {
             <TouchableOpacity style={styles.saveButton} onPress={handleSaveChanges}>
                 <Text style={styles.saveButtonText}>Guardar cambios</Text>
             </TouchableOpacity>
-           <View style={{marginTop:50}}>
-           <BottomTabs/>
-           </View>
+            <View style={styles.bottomTabs}>
+                <BottomTabs />
+            </View>
         </View>
     );
 };
@@ -51,51 +57,53 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingHorizontal: 20,
+        paddingHorizontal: width * 0.05,
         backgroundColor: '#FFFFFF',
     },
     title: {
-        fontSize: 36,
-        fontWeight: '700',
-        marginBottom: 20,
-        width:146,
-        height:44,
-        top:-30,
-        left:-125,
-        color:'#00284D'
+        fontSize: width * 0.08,
+        fontWeight: 'bold',
+        marginBottom: height * 0.03,
+        color: '#00284D',
+        position:'absolute',
+        top:70,
+        left:10
     },
     subtitle: {
-        fontSize: 17,
-        marginBottom: 20,
-        width:198,
-        height:22,
-        top:-30,
-        left:-76,
-        fontWeight:900
+        fontSize: width * 0.045,
+        marginBottom: height * 0.02,
+        position:'absolute',
+        fontWeight: 'bold',
+        top:120,
+        left:10,
+        
     },
     input: {
-        width: 333,
-        height: 50,
+        width: width * 0.9,
+        height: height * 0.06,
         borderWidth: 1,
         borderColor: '#E1E1E1',
-        borderRadius: 30,
-        paddingHorizontal: 10,
-        marginBottom: 10,
-        marginLeft:-50
+        borderRadius: width * 0.1,
+        paddingHorizontal: width * 0.03,
+        marginBottom: height * 0.02,
     },
     saveButton: {
         backgroundColor: '#00284D',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderRadius: 30,
-        marginTop: 170,
-        width:347,
-        left:-20
+        paddingVertical: height * 0.02,
+        paddingHorizontal: width * 0.04,
+        borderRadius: width * 0.1,
+        marginTop: height * 0.200,
+        width:'100%'
     },
     saveButtonText: {
         color: '#FFFFFF',
-        fontSize: 16,
-        textAlign:'center'
+        fontSize: width * 0.04,
+        textAlign: 'center',
+    },
+    bottomTabs: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
     },
 });
 

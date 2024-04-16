@@ -2,17 +2,19 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+const { width, height } = Dimensions.get('window');
 const SecondSplashScreen = () => {
+
     return (
         <View style={styles.container}>
             <View style={styles.content}>
-                <Text style={styles.becycleText}>becycle</Text>
-                <View style={{width:267, height:58, flexDirection:'row'}}>
+                <Text style={[styles.becycleText, { fontSize: width * 0.2 }]}>becycle</Text>
+                <View style={{ width: width * 0.9 }}>
                     <Text style={styles.subtitle}>Has sido agregada a la lista de espera</Text>
                 </View>
                 <View style={styles.circleContainer}>
-                    <View style={styles.circle} />
-                    <Icon name="check" size={30} color="#FFF" style={styles.checkIcon} />
+                    <View style={[styles.circle, { width: width * 0.4, height: width * 0.4, borderWidth: width * 0.04 }]} />
+                    <Icon name="check" size={width * 0.08} color="#FFF" style={styles.checkIcon} />
                 </View>
                 <TouchableOpacity style={styles.buttonContainer}>
                     <Text style={styles.buttonText}>Ver reservas</Text>
@@ -22,63 +24,51 @@ const SecondSplashScreen = () => {
     );
 };
 
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFFFFF',
-    },
-    content: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
+    content: {
+        alignItems: 'center',
+    },
     becycleText: {
-        fontSize: width * 0.2,
         fontWeight: '400',
         color: '#00284D',
-        marginTop: -90,
-        marginBottom: 80,
+        marginBottom: height * 0.08,
     },
     subtitle: {
-        fontSize: 16,
+        fontSize: width * 0.05,
         color: '#FF6800',
-        marginBottom: 20,
+        marginBottom: height * 0.02,
     },
     circleContainer: {
         alignItems: 'center',
     },
     circle: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
-        marginBottom: 20,
-        borderWidth: 10,
-        borderColor: '#00284D'
+        borderRadius: width * 0.2,
+        marginBottom: height * 0.02,
+        borderColor: '#00284D',
+        marginTop:70
     },
     checkIcon: {
-        position: 'absolute',
-        top: '42%',
-        left: '50%',
-        marginTop: -15,
-        marginLeft: -15,
+        marginTop: -width * 0.28,
         color: "#00284D",
         textAlign: 'center'
     },
     buttonContainer: {
-        width: 347,
-        height: 53,
-        position: 'absolute',
-        top: 580,
-        left: -175,
+        width: width * 0.9,
+        height: height * 0.07,
         backgroundColor: '#00284D',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 10,
+        borderRadius: width * 0.02,
+        marginTop: height * 0.35,
     },
     buttonText: {
-        fontSize: 16,
+        fontSize: width * 0.04,
         color: '#FFFFFF',
     },
 });
