@@ -35,6 +35,10 @@ const Comprar = () => {
 
     return (
         <View style={styles.container}>
+
+            <View>
+            <Text style={[styles.heading,{fontSize:24,marginLeft:10,color:'#00284D',marginBottom:-30}]}>Tienda</Text>
+            </View>
             {/* Heading: Membresías */}
             <Text style={styles.heading}>Membresías</Text>
 
@@ -90,12 +94,12 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     box: {
-        width: 160,
-        height: 130,
+        width: 150,
+        height: 125,
         backgroundColor: "#00284D",
         borderRadius: 30,
         margin: 4,
-        justifyContent: "center",
+        justifyContent: "space-around",
         alignItems: "center",
     },
     boxTitle: {

@@ -7,7 +7,7 @@ const HeaderTab = ({ userName }) => {
     return (
         <View style={styles.header}>
             <Text style={styles.headerText}>be cycle</Text>
-            <Text style={styles.userName}>{userName ? userName : 'hello'}</Text>
+            <Text style={styles.userName}>{userName ? userName : 'Michelle Cohen'}</Text>
         </View>
     );
 };

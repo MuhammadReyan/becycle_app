@@ -1,9 +1,15 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const { width, height } = Dimensions.get('window');
 const SecondSplashScreen = () => {
+
+    const navigation =useNavigation()
+    const handleNavigate = ()=>{
+navigation.navigate('ProfileScreen')
+    }
 
     return (
         <View style={styles.container}>
@@ -17,7 +23,7 @@ const SecondSplashScreen = () => {
                     <Icon name="check" size={width * 0.08} color="#FFF" style={styles.checkIcon} />
                 </View>
                 <TouchableOpacity style={styles.buttonContainer}>
-                    <Text style={styles.buttonText}>Ver reservas</Text>
+                    <Text style={styles.buttonText} onPress={handleNavigate}>Ver reservas</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -66,7 +72,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: width * 0.02,
-        marginTop: height * 0.35,
+        marginTop: height * 0.25,
     },
     buttonText: {
         fontSize: width * 0.04,

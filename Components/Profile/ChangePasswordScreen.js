@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import BottomTabs from '../Home/BottomTab';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 const { width, height } = Dimensions.get('window');
 
 const ChangePasswordScreen = () => {
+    const navigation = useNavigation()
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [repeatNewPassword, setRepeatNewPassword] = useState('');
 
     const handleSaveChanges = () => {
         // Handle saving changes logic here
-        console.log('hello')
+        navigation.navigate('Home')
+        
     };
 
     return (
@@ -61,12 +64,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
     },
     title: {
-        fontSize: width * 0.08,
-        fontWeight: 'bold',
+        fontSize: width * 0.09,
         marginBottom: height * 0.03,
         color: '#00284D',
         position:'absolute',
-        top:70,
+        top:60,
         left:10
     },
     subtitle: {
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
         marginBottom: height * 0.02,
         position:'absolute',
         fontWeight: 'bold',
-        top:120,
+        top:130,
         left:10,
         
     },
@@ -86,14 +88,15 @@ const styles = StyleSheet.create({
         borderRadius: width * 0.1,
         paddingHorizontal: width * 0.03,
         marginBottom: height * 0.02,
-        marginTop:20
+        marginTop:20,
+        top:100
     },
     saveButton: {
         backgroundColor: '#00284D',
         paddingVertical: height * 0.02,
         paddingHorizontal: width * 0.04,
         borderRadius: width * 0.1,
-        marginTop: height * 0.200,
+        marginTop: height * 0.440,
         width:'100%'
     },
     saveButtonText: {

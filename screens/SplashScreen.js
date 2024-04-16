@@ -22,10 +22,10 @@ const SplashScreen = () => {
       <Text style={styles.becycleText}>becycle</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={handleLeftButtonPress}>
-          <Text style={styles.buttonText}>Left Button</Text>
+          <Text style={styles.buttonText}>Iniciar sesion</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button, styles.rightButton]} onPress={handleRightButtonPress}>
-          <Text style={[styles.buttonText, styles.rightButtonText]}>Right Button</Text>
+          <Text style={[styles.buttonText, styles.rightButtonText]}>Crear cuenta</Text>
         </TouchableOpacity>
       </View>
     </View>
