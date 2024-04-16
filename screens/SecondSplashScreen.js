@@ -7,7 +7,7 @@ const SecondSplashScreen = () => {
         <View style={styles.container}>
             <View style={styles.content}>
                 <Text style={styles.becycleText}>becycle</Text>
-                <View style={{width:"267px", height:"58px", flexDirection:'row'}}>
+                <View style={{width:267, height:58, flexDirection:'row'}}>
                     <Text style={styles.subtitle}>Has sido agregada a la lista de espera</Text>
                 </View>
                 <View style={styles.circleContainer}>

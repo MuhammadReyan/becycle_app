@@ -26,7 +26,7 @@ export default function RootNavigation() {
                     {/* <Stack.Screen name="SplashScreen" component={SplashScreen} />
                     <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
                     <Stack.Screen name="Home" component={Home} />
-                    <Stack.Screen name="Comprar" component={Comprar} /> */}
+                    <Stack.Screen name="Comprar" component={Comprar} />  */}
                     <Stack.Screen name="SecondSplashScreen" component={SecondSplashScreen}/>
                     {/* <Stack.Screen name="ProfileScreen" component={ProfileScreen}/> */}
                     {/* <Stack.Screen name="ChangePasswordScreen" component={ChangePasswordScreen}/> */}
