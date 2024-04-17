@@ -15,7 +15,7 @@ const SignUpScreen = () => {
   const [agreed, setAgreed] = useState(false);
 
   const handleSignUp = () => {
-    
+
     console.log('Signing up...');
     navigation.navigate('Home')
   };
@@ -31,7 +31,6 @@ const SignUpScreen = () => {
         </View>
 
         <Text style={styles.heading1}>Crea tu cuenta</Text>
-        <Text style={styles.heading2}>Información básica</Text>
 
         <View style={styles.formContainer}>
           <TextInput
@@ -47,6 +46,7 @@ const SignUpScreen = () => {
             value={password}
             onChangeText={setPassword}
           />
+          <Text style={styles.heading2}>Información básica</Text>
           <TextInput
             style={styles.input}
             placeholder="Nombre"
@@ -77,19 +77,27 @@ const SignUpScreen = () => {
             value={dob}
             onChangeText={setDob}
           />
-          
+
           <View style={styles.agreementContainer}>
             <TouchableOpacity
               style={[styles.checkbox, agreed ? styles.checked : null]}
               onPress={() => setAgreed(!agreed)}
             />
+
             <Text style={styles.agreementText}>
-              Acepto los Términos y Condiciones, y el Aviso de Privacidad.
+              <Text style={{ color: '#E1E1E1' }}>
+                Acepto los {" "}
+              </Text>
+              Términos y Condiciones,{" "}
+              <Text style={{ color: '#E1E1E1' }}>
+                y el {" "}
+              </Text>
+              Aviso de Privacidad.
             </Text>
           </View>
-          
+
           <TouchableOpacity style={styles.buttonContainer} onPress={handleSignUp}>
-            <Text style={styles.buttonText} onPress={()=>handleSignUp}>Crear cuenta</Text>
+            <Text style={styles.buttonText} onPress={() => handleSignUp}>Crear cuenta</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
@@ -106,16 +114,16 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     backgroundColor: '#FFFFFF',
-    paddingHorizontal: width * 0.03,
+    paddingHorizontal: width * 0.05,
   },
   header: {
     alignItems: 'center',
-    marginBottom: width * 0.01,
+    marginBottom: width * 0.00,
   },
   headerText: {
     fontWeight: '400',
-    fontSize: width * 0.16, 
-    lineHeight: width * 0.35, 
+    fontSize: width * 0.16,
+    lineHeight: width * 0.35,
     textAlign: 'center',
     color: '#00284D'
   },
@@ -123,13 +131,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#00284D',
     fontWeight: '800',
-    marginBottom: width * 0.02,
+    marginBottom: width * 0.07,
+    marginLeft: 10
+
   },
   heading2: {
     fontSize: 16,
     color: '#00284D',
     fontWeight: '800',
-    marginBottom: width * 0.03,
+    marginBottom: width * 0.05,
+    marginLeft: -170
   },
   formContainer: {
     alignItems: 'center',
@@ -148,6 +159,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: width * 0.02,
+    paddingLeft:15,
+    paddingRight:25
+
+
   },
   checkbox: {
     width: 26,
