@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     color: '#00284D',
     fontWeight: '700',
     marginBottom: width * 0.07,
-    marginLeft: 10
+    marginLeft: 3
 
   },
   heading2: {
@@ -171,13 +171,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#00284D',
     marginRight: 10,
+    marginTop:-35
   },
   checked: {
     backgroundColor: '#00284D',
   },
   agreementText: {
     fontSize: 14,
-    color: '#FF8C00'
+    color: '#FF8C00',
+    marginBottom:10,
+    marginTop:-12
   },
   buttonContainer: {
     width: '100%',
@@ -186,7 +189,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#00284D',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: width * 0.07,
+    marginTop: width * 0.09,
   },
   buttonText: {
     color: '#FFFFFF',

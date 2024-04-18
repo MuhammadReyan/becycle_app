@@ -71,13 +71,14 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: width * 0.05,
     paddingBottom: 10,
     // backgroundColor: '#FFFFFF', // Background color added for better visibility
-     marginTop:210,
+     marginTop:215,
     gap:70,
+    width:'100%'
  
   },
   iconContainer: {

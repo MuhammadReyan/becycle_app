@@ -10,8 +10,8 @@ const ProfileScreen = () => {
     const navigation = useNavigation()
 
 
-    const handleNavigate =()=>{
-        
+    const handleNavigate = () => {
+
         navigation.navigate("ChangePasswordScreen")
     }
 
@@ -22,12 +22,12 @@ const ProfileScreen = () => {
     return (
         <View style={styles.container}>
             <Text style={[styles.becycleText, { fontSize: width * 0.08 }]}>be cycle</Text>
-            <View style={{position:'relative',top:-380,left:-70}}>
+            <View style={{ position: 'relative', top: -380, left: -70 }}>
                 <Text style={[styles.heading, { fontSize: width * 0.05 }]}>
-                <Icon name="chevron-left" size={15} color="black" />
-                  {" "} Información personal
-                    </Text>
-             
+                    <Icon name="chevron-left" size={15} color="black" />
+                    {" "} Información personal
+                </Text>
+
             </View>
             <View style={styles.contentContainer}>
                 <View style={styles.row}>
@@ -58,8 +58,8 @@ const ProfileScreen = () => {
                 <Text style={[styles.bottomButtonText, { fontSize: width * 0.04 }]} >Contactar a soporte</Text>
             </TouchableOpacity>
 
-            <View style={{ position: 'absolute', bottom: -10 }}>
-                <BottomTabs  />
+            <View style={{ position: 'absolute', bottom: -10, width: '120%', }}>
+                <BottomTabs />
             </View>
         </View>
     );
@@ -77,24 +77,24 @@ const styles = StyleSheet.create({
         color: '#00284D',
         marginBottom: height * 0.50,
         marginLeft: -220,
-        marginTop:150
+        marginTop: 150
     },
     headingContainer: {
         marginTop: height * 0.09, // Move heading to the top
         marginBottom: height * 0.05, // Add margin bottom for spacing
         marginLeft: -150,
-      
+
 
     },
     heading: {
         fontWeight: '700',
         marginBottom: height * 0.05,
-        marginTop:40
+        marginTop: 40
     },
     contentContainer: {
         marginBottom: height * 0.2,
         marginTop: -350, // Move content container up
-        
+
     },
     row: {
         flexDirection: 'row',
@@ -107,14 +107,14 @@ const styles = StyleSheet.create({
         fontWeight: 700,
         color: "#00284D",
         marginLeft: 100,
-        marginTop:20
+        marginTop: 20
 
 
 
     },
     value: {
         width: '70%',
-        marginTop:20
+        marginTop: 20
 
 
 
@@ -124,16 +124,16 @@ const styles = StyleSheet.create({
         paddingHorizontal: width * 0.03,
         paddingVertical: height * 0.015,
         marginBottom: height * 0.10,
-        marginTop:100
+        marginTop: 100
     },
     buttonText: {
         color: '#00284D',
         textAlign: 'center',
-        marginBottom:50,
-        position:'absolute',
-        bottom:120,
-        left:-110,
-        
+        marginBottom: 50,
+        position: 'absolute',
+        bottom: 120,
+        left: -110,
+
     },
     bottomButton: {
         backgroundColor: '#00284D',
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     bottomButtonText: {
         color: '#FFFFFF',
         textAlign: 'center',
-        
+
     },
 });
 

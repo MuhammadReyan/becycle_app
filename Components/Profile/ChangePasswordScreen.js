@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     bottomTabs: {
         position: 'absolute',
         bottom: -10,
-        width: '100%',
+        width: '110%',
     },
 });
 
