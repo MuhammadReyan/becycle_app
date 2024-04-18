@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: width * 0.05,
     paddingBottom: 10,
     // backgroundColor: '#FFFFFF', // Background color added for better visibility
-     marginTop:250,
+     marginTop:210,
     gap:70,
  
   },

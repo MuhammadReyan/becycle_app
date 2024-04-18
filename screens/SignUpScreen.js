@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   heading1: {
     fontSize: 16,
     color: '#00284D',
-    fontWeight: '800',
+    fontWeight: '700',
     marginBottom: width * 0.07,
     marginLeft: 10
 
@@ -138,9 +138,9 @@ const styles = StyleSheet.create({
   heading2: {
     fontSize: 16,
     color: '#00284D',
-    fontWeight: '800',
+    fontWeight: '700',
     marginBottom: width * 0.05,
-    marginLeft: -170
+    marginLeft: -180
   },
   formContainer: {
     alignItems: 'center',
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#00284D',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: width * 0.04,
+    marginTop: width * 0.07,
   },
   buttonText: {
     color: '#FFFFFF',

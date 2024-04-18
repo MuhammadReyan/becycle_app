@@ -77,8 +77,8 @@ const Comprar = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingLeft: -100,
-        paddingRight: 10,
+        // paddingLeft: -100,
+        // paddingRight: 10,
         alignItems: "center",
         justifyContent: "flex-start"
     },

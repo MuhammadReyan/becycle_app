@@ -25,7 +25,7 @@ const BoxWithIcon = ({ number }) => {
     return (
         <View style={styles.container}>
             <View style={styles.boxContainer}>
-                <Svg width={width * 0.15} height={width * 0.15} viewBox="0 0 52 59">
+                <Svg width={width * 0.15} height={width * 0.15} viewBox="0 0 52 59" >
                     <Path
                         d="M41.2701 50.6248H13.1985C5.92099 50.6248 0 44.4784 0 36.9239C0 32.8614 1.72022 29.0344 4.71924 26.4246C7.71825 23.8149 11.6462 22.7228 15.5028 23.434L43.1438 28.5211C48.2754 29.4651 52 34.0775 52 39.4877C51.9994 45.6282 47.186 50.6248 41.2701 50.6248ZM13.189 25.8438C10.7027 25.8438 8.28155 26.7452 6.34157 28.4339C3.91659 30.5447 2.52539 33.6383 2.52539 36.9239C2.52539 43.0329 7.31283 48.0026 13.1978 48.0026H41.2701C45.7936 48.0026 49.4734 44.1827 49.4734 39.487C49.4734 35.3505 46.6253 31.8244 42.7011 31.1019L15.0608 26.0149C14.4375 25.9002 13.811 25.8438 13.189 25.8438Z"
                         fill="#F0F2F4"
@@ -55,7 +55,7 @@ const BoxWithIcon = ({ number }) => {
                         fill="#F0F2F4"
                     />
                 </Svg>
-                <View>
+                <View >
                     <Text style={styles.number}>{number ? number : '15'}</Text>
                     <Text style={styles.text}>Clases restantes</Text>
                 </View>
@@ -90,7 +90,7 @@ const BoxWithIcon = ({ number }) => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        marginTop: width * 0.1,
+        marginTop: width * 0.2,
     },
     boxContainer: {
         width: width * 0.9,
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: 15,
+        paddingHorizontal: 25,
         justifyContent: 'space-between',
     },
     number: {

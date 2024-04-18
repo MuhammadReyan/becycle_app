@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     },
     contentContainer: {
         marginBottom: height * 0.2,
-        marginTop: -400, // Move content container up
+        marginTop: -350, // Move content container up
         
     },
     row: {
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: width * 0.03,
         paddingVertical: height * 0.020,
         marginBottom: height * 0.19,
-        marginTop: -180,
+        marginTop: -187,
         width: '110%'
     },
     bottomButtonText: {

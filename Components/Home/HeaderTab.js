@@ -19,17 +19,18 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: width * 0.05,
         paddingTop: width * 0.08, // Adjusted top padding for better spacing
-        paddingBottom: width * 0.05, // Adjusted bottom padding for better spacing
+        paddingBottom: width * 0.03, // Adjusted bottom padding for better spacing
         width: '100%',
     },
     userName: {
         fontWeight: '400',
         fontSize: width * 0.04, // Adjusted font size for better responsiveness
         color: '#00284D',
+        marginTop:12
     },
     headerText: {
         fontWeight: '500',
-        fontSize: width * 0.08, // Adjusted font size for better responsiveness
+        fontSize: width * 0.10, // Adjusted font size for better responsiveness
         color: '#00284D',
     },
 });
