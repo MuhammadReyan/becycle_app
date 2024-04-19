@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import BottomTabs from './BottomTab';
 
 const { width } = Dimensions.get('window');
 
@@ -83,6 +84,8 @@ const BoxWithIcon = ({ number }) => {
             <View style={styles.textBox}>
                 <Text style={styles.textBoxText}>{displayText}</Text>
             </View>
+
+          
         </View>
     );
 };
@@ -146,7 +149,7 @@ const styles = StyleSheet.create({
     },
     textBox: {
         width: width * 0.9,
-        height: width * 0.1,
+        height: width * 0.63,
         backgroundColor: '#FFFFFF',
         borderRadius: width * 0.05,
         justifyContent: 'center',

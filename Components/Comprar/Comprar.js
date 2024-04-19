@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import BottomTabs from "../Home/BottomTab";
 import { useNavigation } from "@react-navigation/native";
+import { Divider } from "react-native-elements";
 
 const memberships = [
     { title: "1 mes", subtitle: "ilimitado", price: "$200" },
@@ -68,6 +69,7 @@ const Comprar = () => {
             </View>
 
             <View style={{ position: "absolute", bottom: -10,width:'97%' }}>
+               
                 <BottomTabs />
             </View>
         </View>

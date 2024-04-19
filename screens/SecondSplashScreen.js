@@ -51,20 +51,21 @@ const styles = StyleSheet.create({
     becycleText: {
         fontWeight: '400',
         color: '#00284D',
-        marginBottom: height * 0.01,
-        marginTop:70
+        marginBottom: height * 0.11,
+        // marginTop:10
     },
     subtitle: {
         fontSize: width * 0.05,
         color: '#FF6800',
-        marginBottom: height * 0.01,
+        marginBottom: height * 0.09,
         width: '60%',
         marginLeft: 90,
-        marginTop:80
+        // marginTop:10
     },
     circleContainer: {
         alignItems: 'center',
-        marginTop:50
+        marginTop:20,
+        marginBottom:40
     },
     buttonContainer: {
         width: width * 0.9,
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: width * 0.30,
-        marginTop: height * 0.25,
+        marginTop: height * 0.15,
     },
     buttonText: {
         fontSize: width * 0.04,

@@ -9,14 +9,16 @@ import BoxWithIcon from '../Components/Home/BoxWithIcon'
 const Home = ({ navigation }) => {
     return (
         <SafeAreaView style={{ backgroundColor: '#ffffff', flex: 1 }}>
-            <View style={{ backgroundColor: 'white', padding: 10 }}>
+            <View style={{ backgroundColor: 'white', padding: 10,}}>
                 <HeaderTab />
                 <BoxWithIcon />
-                <BottomTabs/>
             </View>
 
-            <Divider width={1} />
-            {/* <BottomTabs /> */}
+            <Divider width={1}  />
+              <View style={{marginTop:65}}>
+              <BottomTabs/>
+           
+              </View>
         </SafeAreaView>
     )
 }

@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     color: '#00284D',
     fontWeight: '700',
     marginBottom: width * 0.05,
-    marginLeft: -180
+    marginLeft: -170
   },
   formContainer: {
     alignItems: 'center',
@@ -194,7 +194,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#FFFFFF',
     fontSize: 16,
-    fontWeight: 'bold',
   },
 });
 

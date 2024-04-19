@@ -12,7 +12,7 @@ const ProfileScreen = () => {
 
     const handleNavigate = () => {
 
-        navigation.navigate("ChangePasswordScreen")
+        navigation.navigate('ChangePasswordScreen')
     }
 
 
@@ -54,7 +54,7 @@ const ProfileScreen = () => {
             <TouchableOpacity style={styles.button} >
                 <Text style={[styles.buttonText, { fontSize: width * 0.035 }]}>¿Quieres cambiar algún dato? Por favor contacta a soporte</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.bottomButton} onPress={handleNavigate}  >
+            <TouchableOpacity onPress={handleNavigate} style={styles.bottomButton}   >
                 <Text style={[styles.bottomButtonText, { fontSize: width * 0.04 }]} >Contactar a soporte</Text>
             </TouchableOpacity>
 
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: width * 0.03,
         paddingVertical: height * 0.020,
         marginBottom: height * 0.19,
-        marginTop: -187,
+        marginTop: -200,
         width: '110%'
     },
     bottomButtonText: {

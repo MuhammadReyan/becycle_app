@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 const { width } = Dimensions.get('window');
@@ -8,41 +8,44 @@ const { width } = Dimensions.get('window');
 export default function BottomTabs() {
   const navigation = useNavigation();
   const [activeTab, setActiveTab] = useState("home");
+
   const handleTabPress = (tab) => {
     setActiveTab(tab);
     // Perform navigation logic based on the tab
-    if (tab === "shopping-cart") {
-      navigation.navigate('Comprar');
-    } else if (tab === "calendar") {
-      // Navigate to the calendar screen
-    } else {
-      navigation.navigate('Home');
+    switch (tab) {
+      case "shopping-cart":
+        navigation.navigate('Comprar');
+        break;
+      case "calendar":
+        // Navigate to the calendar screen
+        break;
+      default:
+        navigation.navigate('Home');
+        break;
     }
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollViewContent}>
-      <View style={styles.container}>
-        <Icon
-          icon="home"
-          text="Home"
-          active={activeTab === "home"}
-          onPress={() => handleTabPress("home")}
-        />
-        <Icon
-          icon="shopping-cart"
-          text="Comprar"
-          active={activeTab === "shopping-cart"}
-          onPress={() => handleTabPress("shopping-cart")}
-        />
-        <Icon
-          icon="calendar"
-          text="Reverser"
-          active={activeTab === "calendar"}
-          onPress={() => handleTabPress("calendar")}
-        />
-      </View>
-    </ScrollView>
+    <View style={styles.container}>
+      <Icon
+        icon="home"
+        text="Home"
+        active={activeTab === "home"}
+        onPress={() => handleTabPress("home")}
+      />
+      <Icon
+        icon="shopping-cart"
+        text="Comprar"
+        active={activeTab === "shopping-cart"}
+        onPress={() => handleTabPress("shopping-cart")}
+      />
+      <Icon
+        icon="calendar"
+        text="Reverser"
+        active={activeTab === "calendar"}
+        onPress={() => handleTabPress("calendar")}
+      />
+    </View>
   );
 }
 
@@ -65,21 +68,15 @@ const Icon = ({ icon, text, active, onPress }) => (
 );
 
 const styles = StyleSheet.create({
-  scrollViewContent: {
-    flexGrow: 1,
-    justifyContent: "flex-end",
-  },
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: width * 0.05,
     paddingBottom: 10,
-    // backgroundColor: '#FFFFFF', // Background color added for better visibility
-     marginTop:215,
-    gap:70,
-    width:'100%'
- 
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
   },
   iconContainer: {
     alignItems: "center",
